@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#33AC95</color>
+    <color name="colorPrimaryDark">#33AC95</color>
+    <color name="colorAccent">#FA6B7D</color>
+    <color name="white">#fff</color>
+
+    <color name="leftColor">#a1de89</color>
+    <color name="rightColor">#f7e494</color>
+    <color name="rightBottomColor">#f7d194</color>
+    <color name="leftColorBottom">#208C59</color>
+    <color name="selectLeftColor">#1daf00</color>
+    <color name="selectRightColor">#f8935c</color>
+    <color name="xyColor">#999</color>
+</resources>

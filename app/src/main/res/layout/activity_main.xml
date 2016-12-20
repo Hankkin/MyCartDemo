@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myChart="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_six"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@+id/tv_zhichu_title"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <com.hankkin.mycartdemo.chatview.MyChartView
+                    android:id="@+id/my_chart_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_single"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@+id/rl_boss_pro_year"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+                <com.hankkin.mycartdemo.chatview.SingleView
+                    android:id="@+id/my_single_chart_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    myChart:leftColor="@color/leftColor"
+                    myChart:leftColorBottom="@color/leftColorBottom"
+                    myChart:selectLeftColor="@color/selectLeftColor"
+                    myChart:xyColor="@color/xyColor"/>
+            </RelativeLayout>
+
+            <com.hankkin.mycartdemo.NoScrollListView
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:divider="#00000000"
+                android:id="@+id/nlv_hor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+</LinearLayout>
