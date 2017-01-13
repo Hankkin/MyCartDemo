@@ -100,9 +100,11 @@ public class MyChartView extends View {
     private void init() {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
+
         mBound = new Rect();
         mChartPaint = new Paint();
         mChartPaint.setAntiAlias(true);
+
         mShadowPaint = new Paint();
         mShadowPaint.setAntiAlias(true);
         mShadowPaint.setColor(Color.WHITE);
