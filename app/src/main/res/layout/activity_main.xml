@@ -56,6 +56,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <com.hankkin.mycartdemo.chatview.CustomHorzinonlChartView
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="40dp"
+                myChart:drawColor= "@color/colorPrimary"
+                android:id="@+id/cuschartview"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
         </LinearLayout>
 
 

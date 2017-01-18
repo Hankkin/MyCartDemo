@@ -28,15 +28,18 @@ public class CustomHorzinonlChartView extends View {
 
     public void setNumber(int number) {
         this.number = number;
+        invalidate();
     }
 
 
     public void setLeftText(String leftText){
         this.leftText = leftText;
+        invalidate();
     }
 
     public void setRightText(String rightText){
         this.rightText = rightText;
+        invalidate();
     }
     public CustomHorzinonlChartView(Context context) {
         this(context, null);
@@ -62,37 +65,9 @@ public class CustomHorzinonlChartView extends View {
         textPaint.setStyle(Paint.Style.FILL);
 
         leftText = "左边文字";
-        rightText = "邮编文字";
+        rightText = "右边文字";
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        Log.e(TAG, "  onMeasure()");
-        int width;
-        int height;
-        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
-        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
-        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
-        int heightMode = MeasureSpec.getMode(widthMeasureSpec);
-        width = (widthMode == MeasureSpec.EXACTLY ? widthSize : widthSize / 2);
-        height = (heightMode == MeasureSpec.EXACTLY ? heightSize : heightSize / 2);
-        if (widthMode == MeasureSpec.EXACTLY) {
-            Log.e(TAG, " widthMode == EXACTLY  width:" + widthSize);
-        } else if (widthMode == MeasureSpec.AT_MOST) {
-            Log.e(TAG, " widthMode == AT_MOST  width:" + widthSize);
-        } else if (widthMode == MeasureSpec.UNSPECIFIED) {
-            Log.e(TAG, " widthMode == UNSPECIFIED  width:" + widthSize);
-        }
-        if (heightMode == MeasureSpec.EXACTLY) {
-            Log.e(TAG, " heightMode == EXACTLY  height:" + heightSize);
-        } else if (heightMode == MeasureSpec.AT_MOST) {
-            Log.e(TAG, " heightMode == AT_MOST  height:" + heightSize);
-        } else if (heightMode == MeasureSpec.UNSPECIFIED) {
-            Log.e(TAG, " heightMode == AT_MOST  height:" + heightSize);
-        }
-//        setMeasuredDimension(width, height);
-    }
 
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
@@ -118,13 +93,13 @@ public class CustomHorzinonlChartView extends View {
     }
 
     private void drawBg(Canvas canvas) {
-        mChartPaint.setColor(Color.GRAY);
+        mChartPaint.setColor(getResources().getColor(R.color.xyColor));
         RectF rectFBg = new RectF();
         rectFBg.top = 0;
         rectFBg.bottom = mHeight;
         rectFBg.left = 0;
         rectFBg.right = mWidth;
-        canvas.drawRoundRect(rectFBg, 40, 40, mChartPaint);
+        canvas.drawRoundRect(rectFBg, mHeight/2, mHeight/2, mChartPaint);
     }
 
     private void drawPlan(Canvas canvas) {
@@ -135,7 +110,7 @@ public class CustomHorzinonlChartView extends View {
         rectF.right = number * mWidth / 100.f;
 
         mChartPaint.setColor(drawColor);
-        canvas.drawRoundRect(rectF, 40, 40, mChartPaint);
+        canvas.drawRoundRect(rectF, mHeight/2, mHeight/2, mChartPaint);
     }
 
     /**
