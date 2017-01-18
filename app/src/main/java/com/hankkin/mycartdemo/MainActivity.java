@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.hankkin.mycartdemo.chatview.CustomHorzinonlChartView;
 import com.hankkin.mycartdemo.chatview.HorzinonlChartView;
 import com.hankkin.mycartdemo.chatview.MyChartView;
 import com.hankkin.mycartdemo.chatview.SingleView;
@@ -28,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout llSingle;
     private RelativeLayout rlSingle;
     private HorzinonlChartView mHorzinonlChartView;
+    private CustomHorzinonlChartView customHorzinonlChartView;
 
 
     @Override
@@ -36,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         myChartView = (MyChartView) findViewById(R.id.my_chart_view);
+        customHorzinonlChartView = (CustomHorzinonlChartView) findViewById(R.id.cuschartview);
+        customHorzinonlChartView.setNumber(40);
+        customHorzinonlChartView.setLeftText("完成40%");
+        customHorzinonlChartView.setRightText("未完成60%");
+
         initChatView();
 
         initSingle();
